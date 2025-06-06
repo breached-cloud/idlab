@@ -1,0 +1,95 @@
+Absolutely, let's dive into these SQL commands and functions as you would use them in **iSQL*Plus**:
+
+### DDL (Data Definition Language)
+1. **CREATE**: Creates a new table.
+    ```sql
+    CREATE TABLE students (
+        student_id NUMBER,
+        first_name VARCHAR2(50),
+        last_name VARCHAR2(50),
+        birth_date DATE
+    );
+    ```
+   
+2. **DESC (DESCRIBE)**: Describes the structure of a table.
+    ```sql
+    DESC students;
+    ```
+
+3. **INSERT**: Adds a new row to a table.
+    ```sql
+    INSERT INTO students (student_id, first_name, last_name, birth_date)
+    VALUES (1, 'John', 'Doe', TO_DATE('1990-01-15', 'YYYY-MM-DD'));
+    ```
+
+4. **SELECT**: Retrieves data from a table.
+    ```sql
+    SELECT * FROM students;
+    ```
+
+5. **ALTER**: Modifies an existing table (e.g., adds a new column).
+    ```sql
+    ALTER TABLE students ADD (email VARCHAR2(100));
+    ```
+
+6. **TRUNCATE**: Removes all rows from a table without logging individual row deletions.
+    ```sql
+    TRUNCATE TABLE students;
+    ```
+
+7. **RENAME**: Renames a table.
+    ```sql
+    RENAME students TO pupils;
+    ```
+
+8. **DROP**: Deletes a table.
+    ```sql
+    DROP TABLE pupils;
+    ```
+
+### DML (Data Manipulation Language)
+1. **INSERT**: Adds new rows to a table (covered above).
+2. **UPDATE**: Modifies existing rows in a table.
+    ```sql
+    UPDATE students SET email = 'john.doe@example.com' WHERE student_id = 1;
+    ```
+
+3. **DELETE**: Removes rows from a table.
+    ```sql
+    DELETE FROM students WHERE student_id = 1;
+    ```
+
+4. **SELECT**: Queries data from the database (covered above).
+
+### Aggregate Functions
+1. **DISTINCT**: Selects unique values.
+    ```sql
+    SELECT DISTINCT last_name FROM students;
+    ```
+
+2. **AVG()**: Calculates the average value.
+    ```sql
+    SELECT AVG(student_id) FROM students;
+    ```
+
+3. **SUM()**: Sums up values.
+    ```sql
+    SELECT SUM(student_id) FROM students;
+    ```
+
+4. **MAX()**: Retrieves the maximum value.
+    ```sql
+    SELECT MAX(birth_date) FROM students;
+    ```
+
+5. **MIN()**: Retrieves the minimum value.
+    ```sql
+    SELECT MIN(birth_date) FROM students;
+    ```
+
+6. **COUNT()**: Counts the number of rows.
+    ```sql
+    SELECT COUNT(*) FROM students;
+    ```
+
+These examples should give you a good understanding of how to use these SQL commands and functions in **iSQL*Plus**. Feel free to ask if you have more questions or need further explanations!
